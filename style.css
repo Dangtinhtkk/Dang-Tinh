@@ -78,7 +78,8 @@ header{
 .left-flb{
     margin-left: 20px;
     margin-top: 0px;
-    display: flex
+    display: flex;
+   overflow-y: hidden;
 }
 
 .left-flb button{
