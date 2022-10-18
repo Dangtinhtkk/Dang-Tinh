@@ -60,6 +60,7 @@ i{
 .flex-box{
     display: flex;
     align-items: center;
+   overflow-y: hidden;
 }
 
 header{
