@@ -91,6 +91,7 @@ header{
     width: 30px;
     height: 30px;
     margin-left: 10px;
+   overflow-y: hidden;
 }
 
 .left-flb span{
@@ -343,13 +344,13 @@ main section{
 .thumb{
     width: 250px;
     height: 130px;
-   overflow: hidden;
+   overflow-y: hidden;
 }
 .author{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-   overflow: hidden;
+   overflow-y: hidden;
 }
 
 /*reponsive*/
