@@ -408,7 +408,7 @@ main{
 @media screen and (max-width:685px) {
     main{
         margin-left: 75px;
-        width: calc(100% - 55px);
+        width: calc(100% - 100px);
         display: grid;
         grid-template-columns: auto ;
     }
