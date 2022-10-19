@@ -189,7 +189,7 @@ i{
     bottom: 0px;
     padding-bottom: 10px;
     white-space: nowrap;
-    overflow-x: hidden;
+    overflow: hidden;
     transition: var(--tran-05);
     
     
@@ -198,7 +198,7 @@ i{
 
 .slide-bar.close{
     width: 75px;
-    overflow-x: hidden;
+    
 }
 
 .slide-bar.close .toggle{
