@@ -15,6 +15,7 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    box-sizing: border-box;
 
 }
 
@@ -57,30 +58,25 @@ i{
 }
 
 /*header*/
-.flex-box{
-    display: flex;
-    align-items: center;
-   overflow-y: hidden;
-}
 
-header{
+.flex-box{
     background: #fff;
-    height: 5%;
+    padding: 0 2.5vw;
     width: 100%;
-    padding: 10px 0px;
-    justify-content: space-between;
+    height: 60px;
     position: fixed;
     top: 0;
-    z-index: 10;
+    left: 0;
     overflow: hidden;
+    display: flex;
+    align-items: center;
     
 }
 
 .left-flb{
-    margin-left: 20px;
-    margin-top: 0px;
+    position: fixed;
     display: flex;
-   overflow-y: hidden;
+    
 }
 
 .left-flb button{
@@ -89,11 +85,10 @@ header{
 }
 
 
-.flex-box .left-flb .logo-flb{
+.left-flb img{
     width: 30px;
     height: 30px;
     margin-left: 10px;
-   overflow-y: hidden;
 }
 
 .left-flb span{
@@ -114,14 +109,18 @@ header{
 
 .center-flb{
     display: flex;
+    position: fixed;
+    left: 35%;
+    width: 30%;
 }
 
 .center-flb .search-bar{
-    border: 1px solid #d4d4d4;
-    margin-right: 20px;
-    width: 500px;
-    height: 25px;
-    border-radius: 2px;
+    position: relative;
+    border: 1px solid #dbdbdb;
+    max-width: 500px;
+    width: 100%;
+    height: 35px;
+    
     outline: none;
     display: flex;
 }
@@ -129,7 +128,7 @@ header{
 .center-flb .search-bar input{
     width: 85%;
     height: 100%;
-    border: 0 solid #d4d4d4;
+    border: 0 solid #dbdbdb;
     font-size: 12px;
     text-transform: capitalize;
     padding: 0 10px;
@@ -137,11 +136,13 @@ header{
 }
 
 .center-flb .search-bar .search-btn{
-    width: 12%;
+    width: 15%;
     margin-left: 10px;
     height: 100%;
     background: #f0f0f0;
-    border: 0 solid #d4d4d4;
+    border: 0 solid #dbdbdb;
+    padding: 5px 0;
+    overflow: hidden;
     font-size: 15px;
     outline: none;
 }
@@ -156,6 +157,15 @@ header{
     padding: 8px;
     background: #f0f0f0;
     border-radius: 50%;
+    position: fixed;
+    left: 66%;
+}
+
+.right-flb{
+    height: 35px;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
 }
 
 .right-flb i{
@@ -170,7 +180,8 @@ header{
 
 .slide-bar{
     height: 100%;
-    width: 15%;
+    min-width: 50px;
+    width: 250px;
     background: #fff;
     position: fixed;
     left: 0;
@@ -178,13 +189,16 @@ header{
     bottom: 0px;
     padding-bottom: 10px;
     white-space: nowrap;
-    overflow: hidden;
+    overflow-x: hidden;
     transition: var(--tran-05);
+    
+    
    
 }
 
 .slide-bar.close{
-    width: 4%;
+    width: 75px;
+    overflow-x: hidden;
 }
 
 .slide-bar.close .toggle{
@@ -195,9 +209,17 @@ header{
     margin-left: 50px;
 }
 
+.slide-bar.close ~ .nav-sld{
+    position: fixed;
+    left: 10px;
+    
+}
+
+
 
 .slide-bar:hover{
-    overflow-y: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
@@ -210,20 +232,22 @@ hr{
 
 .slide-bar ul{
     list-style: none;
+   
 }
 .slide-bar ul li{
     padding: 8px;
     margin: 1%;
-   
-   
+    color: #242424;
+    
     
 }
 
 .slide-bar ul li i{
     font-size: 15px;
     width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
     transition: var(--tran-03);
+    
 }
 
 .slide-bar ul li i a{
@@ -231,6 +255,7 @@ hr{
     margin-left: 10px;
     font-weight: normal;
     opacity: 1;
+    
 
 }
 
@@ -243,7 +268,7 @@ hr{
 }
 
 .slide-bar.close ~ nav{
-    margin-left: 130px;
+    margin-left: 75px;
 }
 
 
@@ -255,71 +280,80 @@ hr{
 
 
 /*nav*/
-nav{
-    margin-left: 200px;
-    margin-top: 35px;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+.nav-sld{
     position: fixed;
-    padding: 10px;
+    left: 250px;
+    top: 60px;
+    padding: 0px 20px;
     background-color: white;
     width: 100%;
-    height: 7.5%;
+    height: 60px;
     transition: var(--tran-05);
-   
-   
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: calc(100% - 250px);
 }
 
 
 
-
-nav div{
-    margin-top: 0px;
-    padding: 1px 1px;
-    box-sizing: border-box;
-    overflow: hidden;
+.nav-sld::-webkit-scrollbar{
+    display: none;
 }
-nav div button{
+
+
+
+   
+.nav-op{
+    flex: 0 0 auto;
     background: #f0f0f0;
     font-size: 13px;
-    padding: 6px 16px;
-    border: 1px;
+    padding: 10px 20px;
+    border: 1px solid #dbdbdb;
     color: #242424;
-    margin:10px 5px;
+    margin:10px 0px;
+    text-transform: capitalize;
+    border-radius: 50px;
+    cursor: pointer;
     
-    border-radius: 15px;
     
    
 }
 
+.nav-op.active{
+    color: #fff;
+    background: #e81a1a;
+}
 
-nav div button:active {
+
+.nav-op:active {
     color: #fff;
     background: #242424;
 }
+
 /*video content*/
 
 main{
-    margin-left: 205px;
-    margin-top: 90px;
-    width: calc(100% - 205px);
-    height: auto;
+    width: calc(100% - 250px);
+    margin-top: 120px;
+    margin-left: 250px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    grid-gap: 20px 5px;
+    overflow-x: hidden;
     transition: var(--tran-05);
 
 }
 
-main section{
-  
-    margin-top: 0px;
-    padding: 2px;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
+
 
 .content{
     
-    padding: 10px;
-    
+    min-height: 250px;
+    height: auto;
 }
 .mota{
     margin-top: 10px;
@@ -344,125 +378,95 @@ main section{
 
 
 .thumb{
-    width: 250px;
-    height: 130px;
-   overflow-y: hidden;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }
 .author{
     width: 30px;
     height: 30px;
     border-radius: 50%;
-   overflow-y: hidden;
 }
 
 /*reponsive*/
-/* content */
-@media screen and (max-width:1100px) {
-    main section{
+
+
+@media screen and (max-width:1082px) {
+    main{
         display: grid;
         grid-template-columns: auto auto auto;
     }
 }
 
-@media screen and (max-width:840px) {
-    main section{
+@media screen and (max-width:885px) {
+    main{
         display: grid;
-        grid-template-columns: auto auto;
-    }
-
-    .center-flb .search-bar{
-        width: 400px;
+        grid-template-columns: auto auto ;
     }
 }
 
-
-@media screen and (max-width:630px) {
-    main section{
+@media screen and (max-width:685px) {
+    main{
+        margin-left: 75px;
+        width: calc(100% - 55px);
         display: grid;
         grid-template-columns: auto ;
     }
 }
 
-@media screen and (max-width:473px) {
-    main{
+@media screen and (max-width:685px) {
+    .slide-bar ul li i a{
+    display: none;
+   }
+
+   .slide-bar{
+    width: 12%;
+    
+   }
+   main{
+    margin-left: 133px;
+   }
+
+   .nav-sld{
+    display: none;
+   }
+}
+
+
+
+
+@media screen and (max-width:460px) {
+    .center-flb .search-bar input{
+        display: none;
+    }
+    .center-flb .search-bar{
+        border: 0px;
+    }
+    .center-flb .search-bar .search-btn{
+        background: none;
         margin-left: 90px;
     }
-
+    
     
 }
 
 @media screen and (max-width:360px) {
-    main{
-        margin-left: 0px;
-    }
-}
-
-/*header*/
-
-@media screen and (max-width:735px){
-    .center-flb .search-bar{
-        width: 300px;
-    }
-}
-
-@media screen and (max-width:635px){
-
-    .center-flb .search-bar{
-        border: none;
-        width: 250px;
-        overflow: hidden;
-    }
-
     .center-flb .search-bar .search-btn{
-        background: none;
-        margin-top: 4px;
-        margin-left: 220px;
-       
+        margin-left: 50px;
     }
-    .center-flb .search-bar input{
-        display: none;
 
+    .center-flb #mic{
+        margin-left: -34px;
     }
 }
 
-@media screen and (max-width:590px) {
-    .center-flb{
-        margin-left: -100px;
-    }
 
-}
-    
-    @media screen and (max-width:480px) {
-        .center-flb{
-            margin-left: -235px;
-        }
-}
-
-/*slide bar*/
-
-@media screen and (max-width:1100px) {
-    .slide-bar ul li i a{
-        font-size: 12px
-
-    }
-}
-
-@media screen and (max-width:930px) {
-
-    .slide-bar{
-        width: 12%;
-    }
-    .slide-bar ul li i a{
-        display: none;
-
-    }
-}
-
-@media screen and (max-width:390px) {
-
-    .slide-bar{
+@media screen and (max-width:328px) {
+    .center-flb .search-bar .search-btn{
         display: none;
     }
-    
-}
 
+    .center-flb #mic{
+        display: none;
+    }
+}
