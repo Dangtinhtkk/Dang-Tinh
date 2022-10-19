@@ -470,3 +470,13 @@ main{
         display: none;
     }
 }
+
+@media screen and (max-width:390px) {
+    .center-flb .search-bar .search-btn{
+        margin-left: -25px;
+    }
+
+    .center-flb #mic{
+        margin-left: -18px;
+    }
+}
